@@ -40,7 +40,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#000000" />
         <meta
           name="keywords"
-          content="web development, web design, responsive design, web custom web development, mobile responsive design, e-commerce websites, website company, nairobi website, website company nairobi, website company kenya, website company africa"
+          content="web development, web design, responsive design, web custom web development, mobile responsive design, e-commerce websites, website company, nairobi website, website company nairobi, website company kenya, website company africa, webcafe africa"
         />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

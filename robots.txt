@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.ph
+Crawl-delay: 5
+SiteMap: /sitemap.xml

@@ -39,7 +39,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div
-        className='absolute right-16} md:hidden'
+        className='absolute right-16 md:hidden'
       >
         {!isOpen && <HiOutlineMenuAlt2 className="text-xl" onClick={toggle} />}
       </div>
@@ -60,7 +60,7 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
-      <ul className='flex gap-3 text-2xl'>
+      <ul className='gap-3 text-2xl sm:flex hidden'>
         {socials.map((social, index) => (
           <li key={index}>
             <Link href={social.link} className="hover:underline" target='blank' rel='noopener'>

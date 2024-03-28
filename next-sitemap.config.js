@@ -1,14 +1,10 @@
-const siteUrl = "https://webcafe.africa";
+const siteUrl = 'https://webcafe.africa';
 module.exports = {
-  siteUrl ,
+  siteUrl,
   exclude: ['/admin'],
   generateRobotsTxt: true,
-  robotsTxtOptions:{
-     policies:[
-
-      {userAgent:"*",allow:"/"},
-     ]
+  robotsTxtOptions: {
+    policies: [{ userAgent: '*', allow: '/' }],
   },
   sourceDir: './build',
-
 };

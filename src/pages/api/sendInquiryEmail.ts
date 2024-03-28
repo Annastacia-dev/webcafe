@@ -7,7 +7,15 @@ export default async function handler(
   const postmark = require('postmark');
 
   if (req.method === 'POST') {
-    const { name, email, phoneNumber, projectTitle, goalsAndObjectives, timeline, budget } = req.body;
+    const {
+      name,
+      email,
+      phoneNumber,
+      projectTitle,
+      goalsAndObjectives,
+      timeline,
+      budget,
+    } = req.body;
 
     try {
       const client = new postmark.ServerClient(

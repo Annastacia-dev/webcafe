@@ -1,11 +1,7 @@
 import type { Metadata } from 'next';
+import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Inter } from 'next/font/google';
-import './globals.css';
-import Head from 'next/head';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'webcafe africa',
@@ -19,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content={metadata?.description ?? ''} />
         <meta
@@ -72,29 +68,12 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.google.com" />
         <link rel="preconnect" href="https://www.google.co.ke" />
         <link rel="canonical" href="https://webcafe.africa" />
-        <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="manifest" href="/manifest.webmanifest" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://webcafe.africa",
-              "@type": "Organization",
-              "name": "webcafe africa",
-              "url": "https://webcafe.africa",
-              "logo": "/logo.png",
-              "contactPoint": [
-                { "@type": "ContactPoint",
-                  "telephone": "+254 768 372 439",
-                  "contactType": "customer service"
-                }
-              ]
-            }
-          `}
-        </script>
-      </Head>
+      </head>
 
-      <body>
+      <body className="font-inter text-gray-900 bg-white">
         {children}
         <Analytics />
         <SpeedInsights />

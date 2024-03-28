@@ -45,7 +45,7 @@ export default function InquiryForm() {
       });
       toast.success(data.message);
     } catch (error) {
-      console.error('Error:', error);
+      toast.error('Error sending email');
     }
   };
 
@@ -61,7 +61,7 @@ export default function InquiryForm() {
     } catch (error) {
       console.error('Error:', error);
     }
-  }
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -69,11 +69,13 @@ export default function InquiryForm() {
     await sendAcknowledgementEmail();
   };
 
-
   return (
     <>
       <ToastContainer />
-      <div className="grid sm:grid-cols-3 grid-cols-1 px-10 py-20 bg-gray-50" id="inquiry">
+      <div
+        className="grid sm:grid-cols-3 grid-cols-1 px-10 py-20 bg-gray-50 gap-10"
+        id="inquiry"
+      >
         <div className="col-span-1">
           <hr className="border-4 border-gray-900 w-40 my-4" />
           <h1 className="text-3xl font-bold">

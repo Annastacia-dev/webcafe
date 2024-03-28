@@ -69,7 +69,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.google.co.ke" />
         <link rel="canonical" href="https://webcafe.africa" />
         <link rel="manifest" href="/manifest.json" />
-        <link rel="stylesheet" href={inter} />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <script type="application/ld+json">

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { projects } from '../data/projects';
 import { useState, useEffect } from 'react';
 
@@ -67,10 +68,12 @@ const Header = () => {
 
           <div className="grid sm:grid-cols-2">
             {projects[current].images.map((image, index) => (
-              <img
+              <Image
                 key={index}
                 src={image}
                 alt={projects[current].title}
+                width={500}
+                height={500}
                 className={`sm:h-60 w-full object-cover px-4 py-2 ${index === 0 || index === 1 ? 'sm:border-t-0 border' : 'border'} ${index === 2 || index === 3 ? 'border-b-0' : 'border-b-0'}`}
               />
             ))}

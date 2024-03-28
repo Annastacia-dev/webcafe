@@ -58,6 +58,7 @@ export default function InquiryForm() {
         },
         body: JSON.stringify(formData),
       });
+      console.log('Acknowledgement email sent:', response);
     } catch (error) {
       console.error('Error:', error);
     }

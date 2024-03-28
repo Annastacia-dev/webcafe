@@ -16,7 +16,7 @@ const Header = () => {
     }, 10000);
 
     return () => clearInterval(interval);
-  }, [projects.length, current]);
+  }, [current]);
 
   const previousProject = () => {
     if (current === 0) {

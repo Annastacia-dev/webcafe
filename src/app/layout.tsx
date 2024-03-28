@@ -10,7 +10,6 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'webcafe africa',
   description: 'Building web solutions for your business',
-
 };
 
 export default function RootLayout({
@@ -38,7 +37,6 @@ export default function RootLayout({
         <meta name="rating" content="general" />
         <meta name="referrer" content="always" />
 
-
         <meta
           property="og:site_name"
           content={(metadata?.title as string) ?? ''}
@@ -46,7 +44,10 @@ export default function RootLayout({
         <meta property="og:title" content={(metadata?.title as string) ?? ''} />
         <meta property="og:description" content={metadata?.description ?? ''} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://res.cloudinary.com/dlahz5ciz/image/upload/v1711612428/webcafeafrica_kgeth5.png" />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dlahz5ciz/image/upload/v1711612428/webcafeafrica_kgeth5.png"
+        />
         <meta property="og:url" content="https://webcafe.africa" />
 
         <meta name="twitter:card" content="summary" />
@@ -56,7 +57,10 @@ export default function RootLayout({
           content={(metadata?.title as string) ?? ''}
         />
         <meta name="twitter:description" content={metadata.description ?? ''} />
-        <meta name="twitter:image" content="https://res.cloudinary.com/dlahz5ciz/image/upload/v1711612428/webcafeafrica_kgeth5.png" />
+        <meta
+          name="twitter:image"
+          content="https://res.cloudinary.com/dlahz5ciz/image/upload/v1711612428/webcafeafrica_kgeth5.png"
+        />
         <meta name="twitter:creator" content="@webcafe_africa" />
         <meta name="twitter:url" content="https://webcafe.africa" />
         <meta name="theme-color" content="#000000" />

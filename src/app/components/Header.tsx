@@ -47,11 +47,12 @@ const Header = () => {
     >
       <div className=" min-h-screen bg-gradient-to-r from-black/95 to-black/50">
         <div className="sm:pt-32 pt-40 sm:px-16 px-10 grid sm:grid-cols-2 grid-cols-1 items-center sm:gap-0 gap-8">
-          <div className="">
-            <h1 className=" text-5xl font-bold w-1/2 leading-[4rem]">
+          <div>
+            <h1 className=" text-2xl font-bold w-1/2 leading-[4rem]">
+              <hr className="border-4 border-white w-40" />
               {projects[current].title}
             </h1>
-            <p className="sm:text-base text-sm mt-4 leading-7 sm:w-3/4">
+            <p className="text-sm mt-4 leading-7 sm:w-3/4">
               {projects[current].description}
             </p>
             <a
@@ -88,6 +89,22 @@ const Header = () => {
             />
           ))}
         </div>
+      </div>
+      <div className="absolute top-1/2 left-0 transform -translate-y-1/2">
+        <button
+          className="bg-black bg-opacity-10 text-white px-4 py-2 rounded-l-lg"
+          onClick={previousProject}
+        >
+          &#10094;
+        </button>
+      </div>
+      <div className="absolute top-1/2 right-0 transform -translate-y-1/2">
+        <button
+          className="bg-black bg-opacity-10 text-white px-4 py-2 rounded-r-lg"
+          onClick={nextProject}
+        >
+          &#10095;
+        </button>
       </div>
     </header>
   );

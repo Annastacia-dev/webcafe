@@ -1,4 +1,11 @@
-import Header from './components/comingsoon/header';
+'use client';
+import MainComponentLayout from '@/components/layouts/MainComponentLayout';
+import LandingPage from '@/components/LandingPage';
+
 export default function Home() {
-  return <Header />;
+  return (
+    <MainComponentLayout>
+      <LandingPage />
+    </MainComponentLayout>
+  );
 }

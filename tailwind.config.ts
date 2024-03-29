@@ -11,6 +11,11 @@ const config: Config = {
       colors: {
         primary: '#0002fd',
       },
+      fontFamily: {
+        sans: ['Inter var', 'Inter', 'sans-serif'],
+        quicksand: ['Quicksand', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+      },
     },
   },
   plugins: [],

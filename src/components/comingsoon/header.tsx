@@ -40,12 +40,13 @@ const Header = () => {
           <small className="">
             Web Design | Web Development | Brand Identity
           </small>
-          <h5 className="uppercase text-sm">launching soon</h5>
+          <p className="uppercase text-sm">launching soon</p>
         </div>
 
         <div className="flex gap-4 mt-10 absolute bottom-3 right-5">
           {socials.map((social) => (
             <a
+              aria-label='social'
               href={social.link}
               key={social.id}
               target="_blank"

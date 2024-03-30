@@ -57,6 +57,7 @@ const Header = () => {
               {projects[current].description}
             </p>
             <a
+              aria-label='explore'
               href={projects[current].link}
               target="_blank"
               rel="noreferrer"
@@ -82,6 +83,9 @@ const Header = () => {
         <div className="flex justify-center items-center sm:mt-4 mt-4 sm:pb-6 pb-4 gap-3">
           {projects.map((_, index) => (
             <button
+              role="button"
+              aria-label="indicator"
+              aria-labelledby="indicator"
               key={index}
               className={`w-4 h-4 rounded-full border-4 border-white transition-opacity duration-300 ease-in-out ${
                 index === current
@@ -95,6 +99,9 @@ const Header = () => {
       </div>
       <div className="absolute top-1/2 left-0 transform -translate-y-1/2">
         <button
+          role='button'
+          aria-label='previous'
+          aria-labelledby='previous'
           className="bg-black bg-opacity-10 text-white px-4 py-2 rounded-l-lg"
           onClick={previousProject}
         >
@@ -103,6 +110,9 @@ const Header = () => {
       </div>
       <div className="absolute top-1/2 right-0 transform -translate-y-1/2">
         <button
+          role='button'
+          aria-label='next'
+          aria-labelledby='next'
           className="bg-black bg-opacity-10 text-white px-4 py-2 rounded-r-lg"
           onClick={nextProject}
         >

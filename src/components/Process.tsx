@@ -14,7 +14,9 @@ const Process = () => {
           <h1 className="text-3xl font-bold">our process.</h1>
         </div>
         <div className="col-span-2">
-          <a href="#inquiry" className="text-lg font-bold">
+          <a
+          aria-label='inquiry'
+          href="#inquiry" className="text-lg font-bold">
             contact us.
           </a>
           <p className="text-sm leading-7 sm:w-3/4">
@@ -23,21 +25,21 @@ const Process = () => {
             consultation to discuss your project in more details.
           </p>
           <br />
-          <h5 className="text-lg font-bold">payment.</h5>
+          <p className="text-lg font-bold">payment.</p>
           <p className="text-sm leading-7 sm:w-3/4">
             Once we have agreed on the scope of work, we will send you a
             proposal outlining the project details, timeline, and cost. A 50%
             deposit is required to secure your spot in our production schedule.
           </p>
           <br />
-          <h5 className="text-lg font-bold">production.</h5>
+          <p className="text-lg font-bold">production.</p>
           <p className="text-sm leading-7 sm:w-3/4">
             Our team will work on your project according to the agreed timeline.
             We will keep you updated on our progress and provide you with
             opportunities to provide feedback and make revisions.
           </p>
           <br />
-          <h5 className="text-lg font-bold">delivery.</h5>
+          <p className="text-lg font-bold">delivery.</p>
           <p className="text-sm leading-7 sm:w-3/4">
             Once the project is complete, we will deliver the final product to
             you and provide you with any necessary training or support to ensure

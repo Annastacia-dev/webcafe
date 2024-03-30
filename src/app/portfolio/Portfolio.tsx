@@ -4,7 +4,9 @@ import React from 'react';
 const Portfolio = () => {
   return (
     <div className="px-10 py-10 bg-gray-50">
-      <Link href="/" className="text-gray-500 text-sm hover:underline">
+      <Link
+      aria-label='home'
+      href="/" className="text-gray-500 text-sm hover:underline">
         ← Back
       </Link>
       <div className="grid grid-cols-1 py-5  gap-10 min-h-screen">

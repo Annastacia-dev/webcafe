@@ -28,10 +28,11 @@ const Footer = () => {
   return (
     <div className="bg-black text-white p-10 flex flex-col gap-3">
       <ul className="gap-3 sm:text-xl text-lg flex items-center">
-        <hr className="border-white w-full" />
+        <li className="border border-white w-full" aria-label='divider' />
         {socials.map((social, index) => (
           <li key={index}>
             <Link
+              aria-label={social.name}
               href={social.link}
               className="hover:underline"
               target="blank"

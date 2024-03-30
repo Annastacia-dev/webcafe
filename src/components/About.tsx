@@ -10,7 +10,7 @@ const About = () => {
         </h1>
       </div>
       <div className="col-span-2">
-        <h5 className="text-lg font-bold">branding.</h5>
+        <p className="text-lg font-bold">branding.</p>
         <p className="text-sm leading-7 sm:w-3/4">
           We specialize in crafting compelling brand identities that resonate
           with your target audience. From logo design and brand guidelines to
@@ -18,7 +18,7 @@ const About = () => {
           aspect of your brand reflects your values and vision.
         </p>
         <br />
-        <h5 className="text-lg font-bold">web design.</h5>
+        <p className="text-lg font-bold">web design.</p>
         <p className="text-sm leading-7 sm:w-3/4">
           Our team of experienced web designers creates visually stunning
           websites that are not only aesthetically pleasing but also highly
@@ -27,7 +27,7 @@ const About = () => {
           exceptional user experience.
         </p>
         <br />
-        <h5 className="text-lg font-bold">web development.</h5>
+        <p className="text-lg font-bold">web development.</p>
         <p className="text-sm leading-7 sm:w-3/4">
           We offer custom web development services to help you build a unique
           online presence that reflects your brand and engages your audience.

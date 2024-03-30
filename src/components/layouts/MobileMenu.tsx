@@ -14,16 +14,16 @@ const MobileMenu = ({ isOpen, toggle }: Props) => {
           <IoCloseSharp className="text-xl cursor-pointer" onClick={toggle} />
         </li>
         <li>
-          <Link
-          aria-label='home'
-          href="/" className="hover:underline">
+          <Link aria-label="home" href="/" className="hover:underline">
             Home
           </Link>
         </li>
         <li>
           <Link
-          aria-label='portfolio'
-          href="/portfolio" className="hover:underline">
+            aria-label="portfolio"
+            href="/portfolio"
+            className="hover:underline"
+          >
             Portfolio
           </Link>
         </li>

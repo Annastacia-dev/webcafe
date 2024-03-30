@@ -35,16 +35,16 @@ const Navbar = () => {
       </div>
       <ul className="hidden md:flex gap-6 p-2 font-normal text-sm uppercase">
         <li>
-          <Link
-          aria-label='home'
-          href="/" className="hover:underline">
+          <Link aria-label="home" href="/" className="hover:underline">
             Home
           </Link>
         </li>
         <li>
           <Link
-          aria-label='portfolio'
-          href="/portfolio" className="hover:underline">
+            aria-label="portfolio"
+            href="/portfolio"
+            className="hover:underline"
+          >
             Portfolio
           </Link>
         </li>
@@ -52,16 +52,18 @@ const Navbar = () => {
       <ul className="gap-3 text-2xl sm:flex hidden">
         <li>
           <Link
-          aria-label='email'
-          href="mailto:info@webcafe.africa" className="hover:underline">
+            aria-label="email"
+            href="mailto:info@webcafe.africa"
+            className="hover:underline"
+          >
             <MdEmail />
           </Link>
         </li>
         <li>
           <button
-            role='button'
-            aria-label='phone'
-            aria-labelledby='phone'
+            role="button"
+            aria-label="phone"
+            aria-labelledby="phone"
             onClick={handlePhone}
             className="hover:underline"
           >

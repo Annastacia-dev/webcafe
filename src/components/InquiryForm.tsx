@@ -197,9 +197,9 @@ export default function InquiryForm() {
             </div>
 
             <button
-              role='button'
-              aria-label='submit'
-              aria-labelledby='submit'
+              role="button"
+              aria-label="submit"
+              aria-labelledby="submit"
               type="submit"
               className="bg-black hover:bg-white text-white hover:text-black font-bold py-4 px-6 rounded focus:outline-none focus:shadow-outline"
             >

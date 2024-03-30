@@ -8,3 +8,11 @@ html {
   scroll-behavior: smooth;
   @apply font-montserrat;
 }
+
+.project-details {
+  display: none;
+}
+
+.project:hover .project-details {
+  display: flex;
+}

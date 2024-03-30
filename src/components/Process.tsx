@@ -14,9 +14,7 @@ const Process = () => {
           <h1 className="text-3xl font-bold">our process.</h1>
         </div>
         <div className="col-span-2">
-          <a
-          aria-label='inquiry'
-          href="#inquiry" className="text-lg font-bold">
+          <a aria-label="inquiry" href="#inquiry" className="text-lg font-bold">
             contact us.
           </a>
           <p className="text-sm leading-7 sm:w-3/4">

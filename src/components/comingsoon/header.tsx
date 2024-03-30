@@ -46,7 +46,7 @@ const Header = () => {
         <div className="flex gap-4 mt-10 absolute bottom-3 right-5">
           {socials.map((social) => (
             <a
-              aria-label='social'
+              aria-label="social"
               href={social.link}
               key={social.id}
               target="_blank"

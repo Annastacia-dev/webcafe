@@ -9,12 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#0002fd',
+        move: '#0F3A26',
+        'move-light': '#164A31',
+        lime: '#B4F05A',
+        soft: '#EFF1EC',
+        ice: '#BFEDEB',
+        mint: '#D4F2D2',
+        orange: '#FF7A45',
+        leaf: '#3D7A2A',
+        muted: '#3D5A4A',
+        haze: '#D4DDD6',
       },
       fontFamily: {
-        sans: ['Inter var', 'Inter', 'sans-serif'],
-        quicksand: ['Quicksand', 'sans-serif'],
-        montserrat: ['Montserrat', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['"Bricolage Grotesque"', 'Inter', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
     },
   },

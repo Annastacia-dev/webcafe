@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,13 +6,30 @@
 
 html {
   scroll-behavior: smooth;
-  @apply font-montserrat;
 }
 
-.project-details {
-  display: none;
-}
+@layer components {
+  .eyebrow {
+    @apply font-mono text-sm uppercase tracking-[0.12em] text-leaf;
+  }
 
-.project:hover .project-details {
-  display: flex;
+  .highlight {
+    @apply inline-block rounded-[0.12em] bg-lime px-[0.12em] pb-[0.08em] pt-[0.04em] leading-[0.92];
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full px-7 py-4 text-base font-semibold transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-lime/60;
+  }
+
+  .btn-primary {
+    @apply btn bg-move text-lime hover:bg-move-light;
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-move text-move hover:bg-move hover:text-lime;
+  }
+
+  .field {
+    @apply w-full rounded-2xl border-2 border-move/20 bg-white px-5 py-4 text-base text-move placeholder:text-muted/60 focus:border-move focus:outline-none;
+  }
 }

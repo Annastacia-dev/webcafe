@@ -1,0 +1,32 @@
+# webcafe.africa
+
+> webcafe.africa is a software studio in Nairobi, Kenya that designs and builds websites, web apps and integrations that move businesses forward. Tagline: "Built to move."
+
+## Services
+
+- Websites: personal portfolios and branding, business websites, e-commerce stores.
+- Web apps: custom CRM and ERP systems, point of sale, events and ticketing, productivity tools.
+- Integrations: payment gateways (mobile money, cards, bank transfers), tax management and e-invoicing, accounting software, SMS and email, third-party APIs.
+
+## How a project works
+
+1. Inquiry: the client fills out the inquiry form; if it is a good fit, a consultation is booked.
+2. Proposal: scope, timeline and cost; a 50% deposit secures a spot in the production schedule.
+3. Production: built to the agreed timeline with regular updates and chances for feedback.
+4. Delivery: handover of the finished product, plus training and support.
+
+## Selected work
+
+- [TableNest](https://www.tablenest.site): restaurant management platform for locations, menus, reservations, reviews and restaurant websites.
+- [Spotlit](https://spotlit-seven.vercel.app): creator portfolio and media kit page with a brand inquiry inbox.
+
+## Pages
+
+- [Home](https://webcafe.africa/): services, integrations, process, work and inquiry form.
+- [Portfolio](https://webcafe.africa/portfolio): projects we have designed and built.
+
+## Contact
+
+- Inquiry form: https://webcafe.africa/#inquiry
+- Email: info@webcafe.africa
+- Phone: +254 768 372 439

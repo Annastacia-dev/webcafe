@@ -4,6 +4,7 @@ import About from './About';
 import Integrations from './Integrations';
 import Process from './Process';
 import Work from './Work';
+import Faq from './Faq';
 import InquiryForm from './InquiryForm';
 
 const LandingPage = () => {
@@ -14,6 +15,7 @@ const LandingPage = () => {
       <Integrations />
       <Process />
       <Work />
+      <Faq />
       <InquiryForm />
     </>
   );

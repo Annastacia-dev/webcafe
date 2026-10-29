@@ -28,11 +28,12 @@ export const ProjectGrid = () => (
               alt={`${project.title} screenshot`}
               fill
               sizes="(min-width: 1152px) 360px, (min-width: 640px) 50vw, 100vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
             />
           </div>
         </div>
         <div className="flex flex-col gap-2">
+          <p className="eyebrow">{project.category}</p>
           <h3 className="font-display text-2xl font-extrabold">
             {project.title}
           </h3>

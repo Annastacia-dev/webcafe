@@ -1,126 +1,69 @@
-import Image from 'next/image';
-import { projects } from '../data/projects';
-import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
-const Header = () => {
-  const [current, setCurrent] = useState(0);
+const steps = [
+  { label: 'discovery', status: 'done' },
+  { label: 'design', status: 'done' },
+  { label: 'build', status: 'done' },
+  { label: 'payments + tax', status: 'connected' },
+];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((current) => {
-        if (current === projects.length - 1) {
-          return 0;
-        } else {
-          return current + 1;
-        }
-      });
-    }, 10000);
+const Header = () => (
+  <section className="bg-soft text-move">
+    <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-14 px-6 pb-24 pt-16 md:pt-20">
+      <div className="flex min-w-0 flex-[999_1_520px] flex-col gap-7">
+        <p className="eyebrow">
+          Software studio · Websites · Web apps · Integrations
+        </p>
+        <h1 className="font-display text-[clamp(64px,10vw,148px)] font-extrabold leading-[0.88] tracking-[-0.04em]">
+          Built
+          <br />
+          <span className="highlight mt-[0.1em]">to move.</span>
+        </h1>
+        <p className="max-w-xl text-xl leading-relaxed text-muted">
+          We design and build websites that sell, web apps that run your
+          business, and integrations that keep money and data flowing.
+        </p>
+        <div className="flex flex-wrap gap-3">
+          <Link href="/#inquiry" className="btn-primary">
+            Get a quote
+          </Link>
+          <Link href="/#services" className="btn-outline">
+            Explore services
+          </Link>
+        </div>
+      </div>
 
-    return () => clearInterval(interval);
-  }, [current]);
-
-  const previousProject = () => {
-    if (current === 0) {
-      setCurrent(projects.length - 1);
-    } else {
-      setCurrent(current - 1);
-    }
-  };
-
-  const nextProject = () => {
-    if (current === projects.length - 1) {
-      setCurrent(0);
-    } else {
-      setCurrent(current + 1);
-    }
-  };
-
-  const handleIndicator = (index: number) => {
-    setCurrent(index);
-  };
-
-  return (
-    <header
-      className="text-white min-h-screen bg-cover bg-fixed bg-center bg-no-repeat relative"
-      style={{
-        backgroundImage: `url(${projects[current].cover_image})`,
-      }}
-    >
-      <div className=" min-h-screen bg-gradient-to-r from-black/95 to-black/50">
-        <div className="sm:pt-32 pt-40 sm:px-16 px-10 grid sm:grid-cols-2 grid-cols-1 items-center sm:gap-0 gap-8">
-          <div>
-            <h1 className=" text-2xl font-bold w-1/2 leading-[4rem]">
-              <hr className="border-4 border-white w-40" />
-              {projects[current].title}
-            </h1>
-            <p className="text-sm mt-4 leading-7 sm:w-3/4">
-              {projects[current].description}
+      <div
+        className="min-w-0 flex-[1_1_340px] overflow-hidden rounded-3xl border border-move-light bg-[#0A2A1B]"
+        aria-hidden="true"
+      >
+        <div className="flex gap-2 border-b border-move-light px-5 py-4">
+          <span className="h-3 w-3 rounded-full bg-orange" />
+          <span className="h-3 w-3 rounded-full bg-ice" />
+          <span className="h-3 w-3 rounded-full bg-lime" />
+        </div>
+        <div className="px-6 pb-7 pt-6 font-mono text-[15px] leading-8 text-haze">
+          <p>
+            <span className="text-lime">&gt;_</span> webcafe brew --project
+            yours
+          </p>
+          {steps.map((step) => (
+            <p key={step.label} className="flex gap-2">
+              <span className="text-ice">·</span>
+              <span className="flex-1 overflow-hidden whitespace-nowrap after:content-['.................................']">
+                {step.label}{' '}
+              </span>
+              <span className="text-lime">{step.status}</span>
             </p>
-            <a
-              aria-label="explore"
-              href={projects[current].link}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-block mt-8 border border-white text-white px-4 py-2 hover:bg-white hover:text-black"
-            >
-              Explore
-            </a>
-          </div>
-
-          <div className="grid sm:grid-cols-2">
-            {projects[current].images.map((image, index) => (
-              <Image
-                key={index}
-                src={image}
-                alt={projects[current].title}
-                width={500}
-                height={500}
-                className={`sm:h-60 w-full object-cover px-4 py-2 ${index === 0 || index === 1 ? 'sm:border-t-0 border' : 'border'} ${index === 2 || index === 3 ? 'border-b-0' : 'border-b-0'}`}
-              />
-            ))}
-          </div>
-        </div>
-        <div className="flex justify-center items-center sm:mt-4 mt-4 sm:pb-6 pb-4 gap-3">
-          {projects.map((_, index) => (
-            <button
-              role="button"
-              aria-label="indicator"
-              aria-labelledby="indicator"
-              key={index}
-              className={`w-4 h-4 rounded-full border-4 border-white transition-opacity duration-300 ease-in-out ${
-                index === current
-                  ? 'opacity-100 bg-white'
-                  : 'opacity-50 hover:opacity-100 bg-transparent'
-              }`}
-              onClick={() => handleIndicator(index)}
-            />
           ))}
+          <p>
+            <span className="text-orange">→</span>{' '}
+            <span className="text-soft">live. ready to move.</span>
+          </p>
         </div>
       </div>
-      <div className="absolute top-1/2 left-0 transform -translate-y-1/2">
-        <button
-          role="button"
-          aria-label="previous"
-          aria-labelledby="previous"
-          className="bg-black bg-opacity-10 text-white px-4 py-2 rounded-l-lg"
-          onClick={previousProject}
-        >
-          &#10094;
-        </button>
-      </div>
-      <div className="absolute top-1/2 right-0 transform -translate-y-1/2">
-        <button
-          role="button"
-          aria-label="next"
-          aria-labelledby="next"
-          className="bg-black bg-opacity-10 text-white px-4 py-2 rounded-r-lg"
-          onClick={nextProject}
-        >
-          &#10095;
-        </button>
-      </div>
-    </header>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Header;

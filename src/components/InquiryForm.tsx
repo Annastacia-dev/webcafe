@@ -73,19 +73,30 @@ export default function InquiryForm() {
   return (
     <>
       <ToastContainer />
-      <div
-        className="grid sm:grid-cols-3 grid-cols-1 px-10 py-20 bg-gray-50 gap-10"
-        id="inquiry"
-      >
-        <div className="col-span-1">
-          <hr className="border-4 border-gray-900 w-40 my-4" />
-          <h1 className="text-3xl font-bold">
-            send your <br /> inquiry.
-          </h1>
-        </div>
-        <div className="col-span-2">
+      <section id="inquiry" className="scroll-mt-24 px-6 pb-24">
+        <div className="mx-auto flex max-w-6xl flex-wrap gap-12 rounded-[36px] bg-lime p-[clamp(28px,6vw,72px)] text-move">
+          <div className="flex min-w-0 flex-[1_1_320px] flex-col gap-5">
+            <h2 className="font-display text-[clamp(44px,6vw,80px)] font-extrabold leading-[0.95] tracking-[-0.035em]">
+              Got something
+              <br />
+              to build?
+            </h2>
+            <p className="max-w-md text-lg leading-relaxed">
+              Tell us about it and we’ll come back with a plan, a timeline and a
+              quote.
+            </p>
+            <p className="font-semibold">
+              <a href="mailto:info@webcafe.africa" className="underline">
+                info@webcafe.africa
+              </a>
+              <br />
+              <a href="tel:+254768372439" className="underline">
+                +254 768 372 439
+              </a>
+            </p>
+          </div>
           <form
-            className="flex flex-col gap-6 sm:w-3/4"
+            className="flex min-w-0 flex-[2_1_420px] flex-col gap-5"
             onSubmit={handleSubmit}
           >
             <div className="flex flex-col gap-1">
@@ -99,12 +110,12 @@ export default function InquiryForm() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="border border-black py-4 px-6 bg-transparent text-sm placeholder:text-sm"
+                className="field"
               />
             </div>
 
             <div className="flex flex-col gap-1">
-              <label htmlFor="email" className="text-sm font-bold ">
+              <label htmlFor="email" className="text-sm font-bold">
                 Email
               </label>
               <input
@@ -114,7 +125,7 @@ export default function InquiryForm() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="border border-black py-4 px-6 bg-transparent text-sm placeholder:text-sm"
+                className="field"
               />
             </div>
 
@@ -129,7 +140,7 @@ export default function InquiryForm() {
                 value={formData.phoneNumber}
                 onChange={handleChange}
                 required
-                className="border border-black py-4 px-6 bg-transparent text-sm placeholder:text-sm"
+                className="field"
               />
             </div>
 
@@ -144,7 +155,7 @@ export default function InquiryForm() {
                 value={formData.projectTitle}
                 onChange={handleChange}
                 required
-                className="border border-black py-4 px-6 bg-transparent text-sm placeholder:text-sm"
+                className="field"
                 placeholder='e.g. "E-commerce website development" or "Logo design"'
               />
             </div>
@@ -159,7 +170,7 @@ export default function InquiryForm() {
                 value={formData.goalsAndObjectives}
                 onChange={handleChange}
                 required
-                className="border border-black py-4 px-6 bg-transparent text-sm placeholder:text-sm"
+                className="field"
                 rows={4}
                 placeholder='e.g. "Integrate payment gateway" or "UI/UX improvements"'
               />
@@ -176,7 +187,7 @@ export default function InquiryForm() {
                 value={formData.timeline}
                 onChange={handleChange}
                 required
-                className="border border-black py-4 px-6 bg-transparent text-sm placeholder:text-sm"
+                className="field"
                 placeholder='e.g. "3 months" or "ASAP"'
               />
             </div>
@@ -192,22 +203,16 @@ export default function InquiryForm() {
                 value={formData.budget}
                 onChange={handleChange}
                 required
-                className="border border-black py-4 px-6 bg-transparent text-sm placeholder:text-sm"
+                className="field"
               />
             </div>
 
-            <button
-              role="button"
-              aria-label="submit"
-              aria-labelledby="submit"
-              type="submit"
-              className="bg-black hover:bg-white text-white hover:text-black font-bold py-4 px-6 rounded focus:outline-none focus:shadow-outline"
-            >
-              Submit
+            <button type="submit" className="btn-primary self-start">
+              Send inquiry
             </button>
           </form>
         </div>
-      </div>
+      </section>
     </>
   );
 }

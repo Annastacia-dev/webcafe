@@ -28,7 +28,7 @@ export const projects = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: 'Dawatele',
     description:
       'Shop for prescription and OTC medicines online in Nairobi, Kenya at dawatele. Fast delivery, great discounts, and easy ordering process.',

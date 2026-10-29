@@ -1,56 +1,56 @@
-import React from 'react';
+const steps = [
+  {
+    title: 'Inquiry',
+    text: 'Fill out the inquiry form. We review your needs and, if we are a good fit, book a consultation to go through the details.',
+  },
+  {
+    title: 'Proposal',
+    text: 'You get a proposal with scope, timeline and cost. A 50% deposit secures your spot in our production schedule.',
+  },
+  {
+    title: 'Production',
+    text: 'We build to the agreed timeline, keep you updated, and give you chances to give feedback and request revisions.',
+  },
+  {
+    title: 'Delivery',
+    text: 'We hand over the finished product, plus any training and support you need to run it with confidence.',
+  },
+];
 
-const Process = () => {
-  return (
-    <div
-      className="gap-4 g-cover bg-fixed bg-center bg-no-repeat relative text-white"
-      style={{
-        backgroundImage: `url(bg.jpg)`,
-      }}
-    >
-      <div className="bg-black/80 grid sm:grid-cols-3 grid-cols-1 px-10 py-20 gap-10">
-        <div className="col-span-1 sm:hidden flex flex-col">
-          <hr className="border-4 border-white w-40 my-4" />
-          <h1 className="text-3xl font-bold">our process.</h1>
-        </div>
-        <div className="col-span-2">
-          <a aria-label="inquiry" href="#inquiry" className="text-lg font-bold">
-            contact us.
-          </a>
-          <p className="text-sm leading-7 sm:w-3/4">
-            Fill out our inquiry form to get started on your project. We will
-            evaluate your needs and if we are a good fit, we will schedule a
-            consultation to discuss your project in more details.
-          </p>
-          <br />
-          <p className="text-lg font-bold">payment.</p>
-          <p className="text-sm leading-7 sm:w-3/4">
-            Once we have agreed on the scope of work, we will send you a
-            proposal outlining the project details, timeline, and cost. A 50%
-            deposit is required to secure your spot in our production schedule.
-          </p>
-          <br />
-          <p className="text-lg font-bold">production.</p>
-          <p className="text-sm leading-7 sm:w-3/4">
-            Our team will work on your project according to the agreed timeline.
-            We will keep you updated on our progress and provide you with
-            opportunities to provide feedback and make revisions.
-          </p>
-          <br />
-          <p className="text-lg font-bold">delivery.</p>
-          <p className="text-sm leading-7 sm:w-3/4">
-            Once the project is complete, we will deliver the final product to
-            you and provide you with any necessary training or support to ensure
-            that you are satisfied with the work.
-          </p>
-        </div>
-        <div className="col-span-1 sm:flex flex-col hidden">
-          <hr className="border-4 border-white w-40 my-4" />
-          <h1 className="text-3xl font-bold">our process.</h1>
-        </div>
-      </div>
-    </div>
-  );
-};
+const Process = () => (
+  <section
+    id="process"
+    className="mx-auto flex max-w-6xl scroll-mt-24 flex-col gap-10 px-6 py-24"
+  >
+    <h2 className="font-display text-[clamp(40px,5vw,64px)] font-extrabold leading-none tracking-[-0.03em] text-move">
+      How we work
+    </h2>
+    <ol className="grid grid-cols-[repeat(auto-fit,minmax(230px,1fr))] gap-5">
+      {steps.map((step, index) => {
+        const last = index === steps.length - 1;
+        return (
+          <li
+            key={step.title}
+            className={`flex flex-col gap-3 rounded-3xl p-7 ${last ? 'bg-move text-soft' : 'bg-white text-move'}`}
+          >
+            <span
+              className={`font-mono text-[15px] ${last ? 'text-lime' : 'text-leaf'}`}
+            >
+              0{index + 1}
+            </span>
+            <h3 className="font-display text-[28px] font-extrabold">
+              {step.title}
+            </h3>
+            <p
+              className={`leading-relaxed ${last ? 'text-haze' : 'text-muted'}`}
+            >
+              {step.text}
+            </p>
+          </li>
+        );
+      })}
+    </ol>
+  </section>
+);
 
 export default Process;

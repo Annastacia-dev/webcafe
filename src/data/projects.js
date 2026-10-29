@@ -1,44 +1,20 @@
 export const projects = [
   {
     id: 1,
-    title: 'Funtivities',
+    title: 'TableNest',
+    category: 'Restaurant management platform',
     description:
-      "Funtivities streamlines the process of searching for fun activities  by presenting a curated list of options based on the user's preferences and location, saving time and effort.",
-    cover_image: '/funtivities/cover.webp',
-    link: 'https://funtivities-9e0a41605834.herokuapp.com',
-    images: [
-      '/funtivities/1.webp',
-      '/funtivities/2.webp',
-      '/funtivities/3.webp',
-      '/funtivities/4.webp',
-    ],
+      'One platform for restaurants to manage locations, menus, reservations, reviews and their own website, built for independent restaurants and multi-country chains.',
+    cover_image: '/projects/tablenest.png',
+    link: 'https://www.tablenest.site',
   },
   {
     id: 2,
-    title: 'Menufy',
+    title: 'Spotlit',
+    category: 'Creator portfolio & media kit',
     description:
-      'Designed to simplify menu management tasks for restaurants.It aims at maintaining consistency in menu offerings both online and offline, enhancing the customer experience and to provide valuable insights and analytics related to menu performance, and sales trends.',
-    cover_image: '/menufy/cover.webp',
-    link: 'https://foodmenu.lol',
-    images: [
-      '/menufy/1.webp',
-      '/menufy/2.webp',
-      '/menufy/3.webp',
-      '/menufy/4.webp',
-    ],
-  },
-  {
-    id: 3,
-    title: 'Dawatele',
-    description:
-      'Shop for prescription and OTC medicines online in Nairobi, Kenya at dawatele. Fast delivery, great discounts, and easy ordering process.',
-    cover_image: '/dawatele/cover.webp',
-    link: 'https://foodmenu.lol',
-    images: [
-      '/dawatele/1.webp',
-      '/dawatele/2.webp',
-      '/dawatele/3.webp',
-      '/dawatele/4.webp',
-    ],
+      'One page for creators to show their portfolio, stats, media kit and link-in-bio, with a built-in inbox for brand inquiries and M-Pesa or card payments for Pro plans.',
+    cover_image: '/projects/spotlit.png',
+    link: 'https://spotlit-seven.vercel.app',
   },
 ];

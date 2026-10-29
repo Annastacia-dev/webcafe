@@ -1,16 +1,21 @@
 {
-  "name": "webcafe africa",
+  "name": "webcafe.africa",
   "short_name": "webcafe",
-  "description": "Building web solutions for your business",
+  "description": "Websites, web apps and integrations that move your business forward.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "transparent",
-  "theme_color": "#000",
+  "background_color": "#EFF1EC",
+  "theme_color": "#0F3A26",
   "icons": [
     {
-      "src": "logo.png",
-      "sizes": "192x192",
+      "src": "/logo.png",
+      "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
     }
   ]
 }

@@ -1,35 +1,40 @@
 import { IoCloseSharp } from 'react-icons/io5';
 import Link from 'next/link';
+import Logo from '../Logo';
+import { navLinks } from '@/data/navigation';
 
 interface Props {
   isOpen: boolean;
   toggle: () => void;
 }
 
-const MobileMenu = ({ isOpen, toggle }: Props) => {
-  return (
-    isOpen && (
-      <ul className="flex-col flex items-center fixed inset-0 left-1/4 bg-black/95 gap-8 justify-center p-10text-white font-normal uppercase text-sm">
-        <li className="absolute right-16 top-10 cursor-pointer">
-          <IoCloseSharp className="text-xl cursor-pointer" onClick={toggle} />
-        </li>
-        <li>
-          <Link aria-label="home" href="/" className="hover:underline">
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link
-            aria-label="portfolio"
-            href="/portfolio"
-            className="hover:underline"
-          >
-            Portfolio
-          </Link>
-        </li>
+const MobileMenu = ({ isOpen, toggle }: Props) =>
+  isOpen ? (
+    <div className="fixed inset-0 z-40 flex flex-col bg-soft px-6 py-4 md:hidden">
+      <div className="flex items-center justify-between">
+        <Logo />
+        <button
+          type="button"
+          aria-label="Close menu"
+          onClick={toggle}
+          className="flex h-11 w-11 items-center justify-center rounded-full text-2xl text-move"
+        >
+          <IoCloseSharp />
+        </button>
+      </div>
+      <ul className="mt-16 flex flex-col gap-8 font-display text-4xl font-extrabold text-move">
+        {[{ label: 'Home', href: '/' }, ...navLinks].map((link) => (
+          <li key={link.href}>
+            <Link href={link.href} onClick={toggle}>
+              {link.label}
+            </Link>
+          </li>
+        ))}
       </ul>
-    )
-  );
-};
+      <Link href="/#inquiry" onClick={toggle} className="btn-primary mt-auto">
+        Start a project
+      </Link>
+    </div>
+  ) : null;
 
 export default MobileMenu;

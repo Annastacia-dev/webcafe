@@ -38,3 +38,6 @@ next-env.d.ts
 # ignore env
 .env
 
+# brand and social media source files (kept locally, not part of the site)
+/webcafe-social/
+

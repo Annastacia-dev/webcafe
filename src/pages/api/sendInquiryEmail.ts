@@ -1,53 +1,55 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import { sendEmail } from '@/lib/brevo';
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const postmark = require('postmark');
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method Not Allowed' });
+  }
 
-  if (req.method === 'POST') {
-    const {
-      name,
-      email,
-      phoneNumber,
-      projectTitle,
-      goalsAndObjectives,
-      timeline,
-      budget,
-    } = req.body;
+  const {
+    name,
+    email,
+    phoneNumber,
+    projectTitle,
+    goalsAndObjectives,
+    timeline,
+    budget,
+  } = req.body ?? {};
 
-    try {
-      const client = new postmark.ServerClient(
-        process.env.NEXT_PUBLIC_POSTMARK_API_KEY
-      );
-      await client.sendEmail({
-        From: 'info@webcafe.africa', // Sender address
-        To: 'info@webcafe.africa', // Recipient address
-        Subject: `New Inquiry: ${email}`,
-        TextBody: `
-          Name: ${name}
+  if (!name || !email) {
+    return res.status(400).json({ error: 'Name and email are required' });
+  }
 
-          Email: ${email}
+  const recipient = process.env.INQUIRY_TO_EMAIL;
+  if (!recipient) {
+    console.error('INQUIRY_TO_EMAIL is not set');
+    return res.status(500).json({ error: 'Error sending email' });
+  }
 
-          Phone Number: ${phoneNumber}
-
-          Project Title: ${projectTitle}/n
-
-          Goals and Objectives
-          ${goalsAndObjectives}
-
-          Timeline: ${timeline}/n
-
-          Budget: ${budget}/n
-        `,
-      });
-      res.status(200).json({ message: 'Email sent successfully' });
-    } catch (error) {
-      console.error('Error sending email:', error);
-      res.status(500).json({ error: 'Error sending email' });
-    }
-  } else {
-    res.status(405).json({ error: 'Method Not Allowed' });
+  try {
+    await sendEmail({
+      to: [{ email: recipient }],
+      replyTo: { email, name },
+      subject: `New Inquiry: ${name} (${email})`,
+      text: [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Phone Number: ${phoneNumber}`,
+        `Project: ${projectTitle}`,
+        '',
+        'Goals and Objectives:',
+        goalsAndObjectives,
+        '',
+        `Timeline: ${timeline}`,
+        `Budget (USD): ${budget}`,
+      ].join('\n'),
+    });
+    res.status(200).json({ message: 'Inquiry sent. We’ll be in touch soon.' });
+  } catch (error) {
+    console.error('Error sending email:', error);
+    res.status(500).json({ error: 'Error sending email' });
   }
 }

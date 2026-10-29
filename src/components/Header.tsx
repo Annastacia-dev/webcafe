@@ -4,7 +4,7 @@ const steps = [
   { label: 'discovery', status: 'done' },
   { label: 'design', status: 'done' },
   { label: 'build', status: 'done' },
-  { label: 'payments + tax', status: 'connected' },
+  { label: 'payments', status: 'connected' },
 ];
 
 const Header = () => (

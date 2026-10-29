@@ -2,16 +2,19 @@ import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+const emptyForm = {
+  name: '',
+  email: '',
+  phoneNumber: '',
+  projectTitle: '',
+  goalsAndObjectives: '',
+  timeline: '',
+  budget: '',
+};
+
 export default function InquiryForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phoneNumber: '',
-    projectTitle: '',
-    goalsAndObjectives: '',
-    timeline: '',
-    budget: '',
-  });
+  const [formData, setFormData] = useState(emptyForm);
+  const [sending, setSending] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -23,9 +26,10 @@ export default function InquiryForm() {
     }));
   };
 
+  // Returns whether the inquiry reached us, so we only thank people (and clear
+  // their answers) when it actually did.
   const sendInquiryEmail = async () => {
     try {
-      toast.info('Sending email...');
       const response = await fetch('/api/sendInquiryEmail', {
         method: 'POST',
         headers: {
@@ -33,19 +37,18 @@ export default function InquiryForm() {
         },
         body: JSON.stringify(formData),
       });
+      if (!response.ok) {
+        throw new Error(`Inquiry failed with ${response.status}`);
+      }
       const data = await response.json();
-      setFormData({
-        name: '',
-        email: '',
-        phoneNumber: '',
-        projectTitle: '',
-        goalsAndObjectives: '',
-        timeline: '',
-        budget: '',
-      });
       toast.success(data.message);
+      return true;
     } catch (error) {
-      toast.error('Error sending email');
+      console.error('Error:', error);
+      toast.error(
+        'Sorry, your inquiry could not be sent. Please email us at info@webcafe.africa.'
+      );
+      return false;
     }
   };
 
@@ -58,7 +61,9 @@ export default function InquiryForm() {
         },
         body: JSON.stringify(formData),
       });
-      console.log('Acknowledgement email sent:', response);
+      if (!response.ok) {
+        console.error('Acknowledgement email failed:', response.status);
+      }
     } catch (error) {
       console.error('Error:', error);
     }
@@ -66,8 +71,12 @@ export default function InquiryForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await sendInquiryEmail();
-    await sendAcknowledgementEmail();
+    setSending(true);
+    if (await sendInquiryEmail()) {
+      await sendAcknowledgementEmail();
+      setFormData(emptyForm);
+    }
+    setSending(false);
   };
 
   return (
@@ -207,8 +216,12 @@ export default function InquiryForm() {
               />
             </div>
 
-            <button type="submit" className="btn-primary self-start">
-              Send inquiry
+            <button
+              type="submit"
+              disabled={sending}
+              className="btn-primary self-start disabled:cursor-wait disabled:opacity-70"
+            >
+              {sending ? 'Sending…' : 'Send inquiry'}
             </button>
           </form>
         </div>
